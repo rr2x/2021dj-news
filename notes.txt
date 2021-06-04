@@ -1,0 +1,9 @@
+do not run
+
+>>> py manage.py migrate
+
+yet, we need to create our custom user model 1st.
+
+
+>>> py manage.py makemigrations accounts
+>>> py manage.py migrate
