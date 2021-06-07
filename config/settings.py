@@ -31,19 +31,19 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
-
     # 3rd party
     'crispy_forms',
 
     # local
     'accounts',
     'pages',
+
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
 ]
 
 MIDDLEWARE = [
@@ -134,6 +134,8 @@ LOGOUT_REDIRECT_URL = 'home'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
+# for testing purposes when sending reset password using email
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
