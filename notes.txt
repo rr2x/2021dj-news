@@ -7,3 +7,10 @@ yet, we need to create our custom user model 1st.
 
 >>> py manage.py makemigrations accounts
 >>> py manage.py migrate
+
+no need to add tests for core django functionality
+
+SimpleTestCase = no database
+TestCase = database involved
+
+>>> pip install django-crispy-forms
