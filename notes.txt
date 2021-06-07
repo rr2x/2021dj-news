@@ -14,7 +14,6 @@ SimpleTestCase = no database
 TestCase = database involved
 
 >>> pipenv install django-crispy-forms
->>> pipenv install python-decouple
 
 NOTE: if on heroku, setup the variables manually which
       should reflect on your .env
@@ -34,3 +33,45 @@ authentication
 
 authorization
  - restricted access based on user role
+
+----- IMPORTANT NOTE missing imports: ----
+change interpreter below (because we are using a different environment each time)
+in this current project should read:
+"Python 3.9.5 64-bit ('news-UdE2bFq2')"
+
+>>> pipenv install environs[django]
+
+
+to create a new secret:
+>>> python
+>>> import secrets
+>>> print(secrets.token_urlsafe())
+>>> exit()
+
+
+>>> pipenv install psycopg2-binary
+>>> pipenv install whitenoise
+>>> py manage.py collectstatic
+
+>>> pipenv install gunicorn   (install the production web server)
+
+(heroku deployment)
+
+>>> heroku login
+>>> heroku create (custom name)
+
+(check remotes)
+>>> git remote -v
+(if not included, add manually)
+>>> git remote add Heroku ...
+
+(create postgresql)
+>>> heroku addons:create heroku-postgresql:hobby-dev
+>>> heroku config:set SECRET_KEY='...'
+
+---- commit to github 1st ---
+
+>>> git push heroku master
+>>> heroku run py manage.py migrate
+>>> heroku run py manage.py createsuperuser
+>>> heroku run py manage.py check --deploy

@@ -6,7 +6,10 @@ name = "pypi"
 [packages]
 django = "*"
 django-crispy-forms = "*"
-python-decouple = "*"
+environs = {extras = ["django"], version = "*"}
+psycopg2-binary = "*"
+whitenoise = "*"
+gunicorn = "*"
 
 [dev-packages]
 
