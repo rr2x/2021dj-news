@@ -13,4 +13,11 @@ no need to add tests for core django functionality
 SimpleTestCase = no database
 TestCase = database involved
 
->>> pip install django-crispy-forms
+>>> pipenv install django-crispy-forms
+>>> pipenv install python-decouple
+
+NOTE: if on heroku, setup the variables manually which
+      should reflect on your .env
+
+can use auto forward for mailtrap.io to real inbox,
+just buy plans to raise inbox limitations
