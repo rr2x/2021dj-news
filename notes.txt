@@ -25,3 +25,12 @@ just buy plans to raise inbox limitations
 
 >>> py manage.py makemigrations articles
 >>> py manage.py migrate
+
+authentication
+ - login
+ - logout
+ - user registration
+ - account password reset
+
+authorization
+ - restricted access based on user role
