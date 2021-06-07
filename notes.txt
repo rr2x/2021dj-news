@@ -68,6 +68,7 @@ to create a new secret:
 (create postgresql)
 >>> heroku addons:create heroku-postgresql:hobby-dev
 >>> heroku config:set SECRET_KEY='...'
+>>> heroku config:set DISABLE_COLLECTSTATIC=1
 
 ---- commit to github 1st ---
 
